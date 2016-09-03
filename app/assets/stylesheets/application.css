@@ -14,3 +14,8 @@
  *= require_tree .
  *= require_self
  */
+
+.debug_dump{
+    height: 100px;
+    overflow-y: scroll;
+}
