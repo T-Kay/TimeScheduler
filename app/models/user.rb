@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :categories
   attr_accessor :remember_token
   has_secure_password
   VALID_REGEX =  /\A[0-9a-zA-Z_-]+\z/i
