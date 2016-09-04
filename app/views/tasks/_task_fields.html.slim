@@ -1,8 +1,5 @@
 fieldset
-  .field
-    = f.label :category
-    = f.text_field :category
-  .field
-    = f.label :name
-    = f.text_field :name
+  .field.form-group
+    = f.label :name, class: 'col-sm-offset-1 col-sm-2 control-label'
+    .col-sm-9 = f.text_field :name, class: 'form-control'
   = link_to "削除", '#', class: "remove_fields"

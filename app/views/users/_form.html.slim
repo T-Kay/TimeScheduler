@@ -6,13 +6,13 @@
         - @user.errors.full_messages.each do |message|
           li = message
 
-  .field.form-group.row
+  .field.form-group
     = f.label :username, class: 'col-sm-4 control-label'
     .col-sm-8 = f.text_field :username, class: 'form-control'
-  .field.form-group.row
+  .field.form-group
     = f.label :password, class: 'col-sm-4 control-label'
     .col-sm-8 = f.text_field :password, class: 'form-control'
-  .field.form-group.row
+  .field.form-group
     = f.label :password_confirmation, class: 'col-sm-4 control-label'
     .col-sm-8 = f.text_field :password_confirmation, class: 'form-control'
   .form-group
