@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903081534) do
+ActiveRecord::Schema.define(version: 20160904143131) do
+
+  create_table "categories", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "phases", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer  "category_id"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_tasks_on_category_id"
+  end
+
+  create_table "time_schedules", force: :cascade do |t|
+    t.integer  "task_id"
+    t.integer  "state_id"
+    t.integer  "phase_id"
+    t.datetime "start"
+    t.datetime "end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["phase_id"], name: "index_time_schedules_on_phase_id"
+    t.index ["state_id"], name: "index_time_schedules_on_state_id"
+    t.index ["task_id"], name: "index_time_schedules_on_task_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

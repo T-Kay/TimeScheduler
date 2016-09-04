@@ -1,0 +1,29 @@
+h1 Listing time_schedules
+
+table
+  thead
+    tr
+      th Task
+      th State
+      th Phase
+      th Start
+      th End
+      th
+      th
+      th
+
+  tbody
+    - @time_schedules.each do |time_schedule|
+      tr
+        td = time_schedule.task
+        td = time_schedule.state
+        td = time_schedule.phase
+        td = time_schedule.start
+        td = time_schedule.end
+        td = link_to 'Show', time_schedule
+        td = link_to 'Edit', edit_time_schedule_path(time_schedule)
+        td = link_to 'Destroy', time_schedule, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Time schedule', new_time_schedule_path

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: one
+  state: one
+  phase: one
+  start: 2016-09-04 23:31:31
+  end: 2016-09-04 23:31:31
+
+two:
+  task: two
+  state: two
+  phase: two
+  start: 2016-09-04 23:31:31
+  end: 2016-09-04 23:31:31

@@ -1,0 +1,24 @@
+= form_for @time_schedule do |f|
+  - if @time_schedule.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@time_schedule.errors.count, "error")} prohibited this time_schedule from being saved:"
+      ul
+        - @time_schedule.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :task
+    = f.text_field :task
+  .field
+    = f.label :state
+    = f.text_field :state
+  .field
+    = f.label :phase
+    = f.text_field :phase
+  .field
+    = f.label :start
+    = f.datetime_select :start
+  .field
+    = f.label :end
+    = f.datetime_select :end
+  .actions = f.submit

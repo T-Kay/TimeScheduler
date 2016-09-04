@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Task:
+  = @time_schedule.task
+p
+  strong State:
+  = @time_schedule.state
+p
+  strong Phase:
+  = @time_schedule.phase
+p
+  strong Start:
+  = @time_schedule.start
+p
+  strong End:
+  = @time_schedule.end
+
+= link_to 'Edit', edit_time_schedule_path(@time_schedule)
+'|
+= link_to 'Back', time_schedules_path
