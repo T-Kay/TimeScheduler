@@ -12,4 +12,8 @@
   .field
     = f.label :name
     = f.text_field :name
+  = f.fields_for :tasks do |builder|
+    = render "tasks/task_fields", f: builder
+  = link_to_add_fields "タスクの追加", f, :tasks
   .actions = f.submit
+
